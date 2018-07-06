@@ -1,6 +1,6 @@
-This is the implementation of Topological Clustering Semantic Similarity (TCSS)
-algorithm. For any queries please conact the original authors Gary D. Bader
-<gary.bader@utoronto.ca> or Shobhit Jain <shobhit@cs.toronto.edu>.
+This is a Python 3 port of the Topological Clustering Semantic Similarity
+(TCSS) algorithm. For any queries please conact the original authors Gary D.
+Bader <gary.bader@utoronto.ca> or Shobhit Jain <shobhit@cs.toronto.edu>.
 
 Requirements:
 		1) Python 3+
