@@ -16,9 +16,9 @@ def _usage():
     '''
     Details on how to use TCSS.
     '''
-    print "\n\n tcss.py [-options] geneA geneB\
-    \n or \n tcss.py [-options] -i input_file"
-    print "\n -options \
+    print("\n\n tcss.py [-options] geneA geneB\
+    \n or \n tcss.py [-options] -i input_file")
+    print("\n -options \
     \n    -i [file name] or --input [=file name]       Input file (two genes separted by comma per line)\
     \n    -o [file name] or --output [=file name]      Output file\
     \n    -c [domain:cutoff] or                        Domain [C/P/F], cutoff [int/float] in any combination\
@@ -27,7 +27,7 @@ def _usage():
     \n    --gene [=file name]                          Gene annotation file (default: SGD file provided)\
     \n    --go [=file name]                            Gene Ontology (GO) obo file (default: GO file provided)\
     \n    --drop [=evidence code]                      GO evidence code not to be used \
-    \n    -h or --help                                 Usage\n\n\n"
+    \n    -h or --help                                 Usage\n\n\n")
 
 
 
@@ -58,11 +58,11 @@ def _command_line_arguments(argv):
         elif opt in ("-i", "--input"):
             if os.path.isfile(arg):
                 if len(args) > 0: 
-                    print "Excluding arguments:", args
+                    print("Excluding arguments:", args)
                     options['args'] = None
                 options['input'] = arg
             else:
-                print 'Input file not found'
+                print('Input file not found')
                 sys.exit()
         elif opt in ("-o", "--output"):
             options['output'] = arg
@@ -76,13 +76,13 @@ def _command_line_arguments(argv):
             if os.path.isfile(arg):
                 options['gene'] = arg
             else:
-                print 'Gene annotation file not found'
+                print('Gene annotation file not found')
                 sys.exit()
         elif opt in ("--go"):
             if os.path.isfile(arg):
                 options['go'] = arg
             else:
-                print 'GO file not found'
+                print('GO file not found')
                 sys.exit()
         else:
             _usage()
@@ -103,7 +103,7 @@ def input_file_run(objs, infile, outfile, detail):
     for line in file:
         line = line.strip().split(",")
         if len(line) > 2:
-            print 'File format not proper: refer README'
+            print('File format not proper: refer README')
             sys.exit()
         result += calculate_semantic_similarity(objs, line[0], line[1], detail)
     file.close()
@@ -121,10 +121,10 @@ def output_results(result, outfile):
             file.write(result)
             file.close()
         except:
-            print "Cannot open output file: check path or permissions \n Printing results on screen"
-            print result
+            print("Cannot open output file: check path or permissions \n Printing results on screen")
+            print(result)
     else:
-        print result
+        print(result)
         
 
     
