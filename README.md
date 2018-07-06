@@ -1,25 +1,26 @@
+# TCSS (Python 3 port)
+
 This is a Python 3 port of the Topological Clustering Semantic Similarity
 (TCSS) algorithm. For any queries please conact the original authors Gary D.
 Bader <gary.bader@utoronto.ca> or Shobhit Jain <shobhit@cs.toronto.edu>.
 
+The original version can be downloaded from <http://baderlab.org/Software/TCSS>.
+
 Requirements:
-		1) Python 3+
+
+1. Python 3+
 
 Files provided:
 
-		1) gene_ontology.obo.txt : Gene Ontology obo file
-
-		2) gene_association.sgd : SGD annotation file
-
-		3) *.py : Python files of TCSS implementation
-
-
-
+1. gene_ontology.obo.txt : Gene Ontology obo file
+2. gene_association.sgd : SGD annotation file
+3. *.py : Python files of TCSS implementation
 
 Usage of TCSS implementation in Unix/Linux systems:
 
 Use the following comand to run TCSS.
 
+```
  tcss.py [-options] geneA geneB
  or
  tcss.py [-options] -i input_file
@@ -37,5 +38,6 @@ Use the following comand to run TCSS.
     --go [=file name]                            Gene Ontology (GO) obo file (default: GO file provided)
     --drop [=evidence code]                      GO evidence code not to be used
     -h or --help                                 Usage
+```
 
 Note: The program currently works with only SGD gene ids or UniProtKB human ids.
